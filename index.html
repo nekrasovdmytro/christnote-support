@@ -3,84 +3,717 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - ChristNote</title>
+    <meta name="description" content="ChristNote Support - Get help with your Bible study notes, sermon notes, prayer journal, and Christian note-taking app for iPhone.">
+    <title>Support - ChristNote | Bible Study & Christian Note-Taking App</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 { color: #1A1A2E; }
-        h2 { color: #1A1A2E; margin-top: 30px; }
-        .last-updated { color: #666; font-style: italic; }
+        
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary-color: #8b5cf6;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 50px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            margin-bottom: 24px;
+        }
+        
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: white;
+            padding: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.25em;
+            opacity: 0.95;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        h2 {
+            color: var(--text-primary);
+            font-size: 2em;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.4em;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 48px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .contact-section-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+            margin-bottom: 24px;
+            font-size: 2.2em;
+        }
+        
+        .contact-section p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-email {
+            display: inline-block;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 16px 32px;
+            border-radius: 12px;
+            margin: 24px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .contact-email a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .intro-text {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .feature-card h3 {
+            color: var(--text-primary);
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1em;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .faq-item {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .faq-question::before {
+            content: '❓';
+            font-size: 1.2em;
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            padding-left: 32px;
+        }
+        
+        ul {
+            padding-left: 28px;
+            margin: 20px 0;
+        }
+        
+        li {
+            margin: 12px 0;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .link:hover {
+            color: var(--primary-dark);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            margin: 8px 8px 8px 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            font-size: 1em;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid var(--warning-color);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #92400e;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .highlight-box p {
+            color: #78350f;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid var(--primary-light);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 24px 0;
+        }
+        
+        .info-box h3 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+        
+        .info-box p {
+            color: #1e40af;
+            margin: 0;
+        }
+        
+        .footer {
+            background: var(--bg-light);
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .footer-links {
+            margin: 24px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-dark);
+        }
+        
+        .footer-links span {
+            color: var(--border-color);
+        }
+        
+        .last-updated {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 24px;
+        }
+        
+        .tagline {
+            margin-top: 16px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 40px 24px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .header p {
+                font-size: 1.1em;
+            }
+            
+            .content {
+                padding: 32px 24px;
+            }
+            
+            .section {
+                margin-bottom: 48px;
+            }
+            
+            h2 {
+                font-size: 1.7em;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .contact-section {
+                padding: 32px 24px;
+            }
+            
+            .contact-email {
+                font-size: 1.3em;
+                padding: 14px 24px;
+            }
+            
+            .faq-answer {
+                padding-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-email {
+                font-size: 1.1em;
+                word-break: break-all;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for ChristNote</h1>
-    <p class="last-updated">Last Updated: December 2025</p>
-    
-    
-    <h2>Introduction</h2>
-    <p>ChristNote ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="app-icon.png" alt="ChristNote Logo" class="logo">
+                </div>
+                <h1>ChristNote Support</h1>
+                <p>Your Bible study companion - We're here to help you grow in faith through better note-taking</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="contact-section">
+                    <div class="contact-section-content">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions or need assistance? We're here to help!</p>
+                        <div class="contact-email">
+                            <a href="mailto:christnote.support@gmail.com">christnote.support@gmail.com</a>
+                        </div>
+                        <p style="margin-top: 16px; font-size: 1em; opacity: 0.9;">We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+            </div>
 
-    <h2>Data Collection</h2>
-    <p><strong>We do not collect, store, or transmit any personal information.</strong></p>
-    <p>ChristNote is designed with privacy as a core principle. We do not:</p>
-    <ul>
-        <li>Collect any personal data</li>
-        <li>Track your usage</li>
-        <li>Share information with third parties</li>
-        <li>Use analytics or tracking services</li>
-        <li>Store data on external servers</li>
-    </ul>
+            <div class="section">
+                <h2>About ChristNote</h2>
+                <p class="intro-text">
+                    <strong>ChristNote is a Bible study and Christian note-taking app</strong> designed specifically for believers who want to deepen their faith through organized, private note-taking. Whether you're taking sermon notes, journaling your devotions, studying Scripture, or reflecting on your spiritual journey, ChristNote provides powerful tools while keeping your personal reflections completely private and secure.
+                </p>
+                <p class="intro-text">
+                    Built with privacy-first principles, all your Bible study notes, prayer journals, sermon notes, and spiritual reflections are stored locally on your device. No cloud sync means your personal faith journey remains completely private and secure.
+                </p>
+                
+                <h3>Key Features for Bible Study & Christian Note-Taking</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>📖 Bible Study Notes</h3>
+                        <p>Take detailed notes during sermons, Bible studies, and personal devotions. Organize your thoughts on Scripture passages, sermon points, and spiritual insights.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>📝 Rich Text Editor</h3>
+                        <p>Format your notes with headers, lists, highlights, and more. Perfect for organizing sermon outlines, Bible study notes, and prayer journal entries.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🙏 Prayer Journal</h3>
+                        <p>Keep a private prayer journal with voice notes, reminders for prayer requests, and organized entries. Your prayers stay completely private on your device.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🔔 Reminders</h3>
+                        <p>Set reminders for daily devotions, prayer times, or to review specific notes. Notifications deep-link directly to your notes.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🎤 Voice Notes</h3>
+                        <p>Record sermon audio, prayer requests, or quick thoughts. Perfect for capturing insights during church services or personal reflection time.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>📎 Attachments</h3>
+                        <p>Attach sermon PDFs, Bible study handouts, or images to your notes. Keep all your study materials organized in one place.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🔒 Complete Privacy</h3>
+                        <p>All your Bible study notes, prayer journals, and spiritual reflections are stored locally on your device. No cloud sync means your faith journey stays completely private.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>📤 Export & Share</h3>
+                        <p>Export your notes with optional encryption. Share sermon notes with your small group or create PDFs of your Bible study insights.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🏷️ Organization</h3>
+                        <p>Use tags, projects, and templates to organize notes by book of the Bible, sermon series, prayer topics, or any system that works for you.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🤖 AI Assistance</h3>
+                        <p>Optional AI help for summarizing sermon notes, improving your writing, or translating content. Your data never leaves your device.</p>
+                    </div>
+                </div>
+            </div>
 
-    <h2>Local Notes Storage</h2>
-    <p>All notes created in ChristNote are stored <strong>exclusively on your device</strong>. This means:</p>
-    <ul>
-        <li>Your notes never leave your device</li>
-        <li>No data is sent to external servers</li>
-        <li>No cloud synchronization occurs</li>
-        <li>You have complete control over your data</li>
-    </ul>
-    <p>You can export your notes at any time using the Export feature in Settings.</p>
+            <div class="section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a new note?</div>
+                        <div class="faq-answer">Tap the "+" button in the main notes list to create a new note. Perfect for taking sermon notes, Bible study notes, or journaling your devotions. You can also use the widget on your home screen for quick note creation, or use templates for consistent formatting.</div>
+                    </div>
 
-    <h2>Web Notes Feature</h2>
-    <p>ChristNote allows you to connect to external web-based note-taking services (Web Notes feature). When you use this feature:</p>
-    <ul>
-        <li>You provide the URL of the web service you want to access</li>
-        <li>The app displays the web service in a browser view</li>
-        <li>We do not access, store, or process content from external web services</li>
-        <li>The privacy practices of external web services are governed by their own privacy policies</li>
-        <li>Please review the privacy policy of any web service you choose to connect to</li>
-    </ul>
+                    <div class="faq-item">
+                        <div class="faq-question">Where are my Bible study notes and prayer journals stored?</div>
+                        <div class="faq-answer">All your notes - including sermon notes, Bible study notes, prayer journals, and spiritual reflections - are stored locally on your device. They never leave your device and are not synced to any external servers. This ensures your personal faith journey remains completely private and secure. You have complete control over your data.</div>
+                    </div>
 
-    <h2>Data Export</h2>
-    <p>You can export your local notes at any time using the Export feature in the app's Settings. Exported notes can be saved with or without encryption, and you maintain full control over where and how you store exported data.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export my notes?</div>
+                        <div class="faq-answer">Yes! You can export your notes from the Settings menu. You can choose to export with or without encryption, and save them wherever you prefer. You can also export individual notes as PDF or Word-compatible RTF files.</div>
+                    </div>
 
-    <h2>Third-Party Services</h2>
-    <p>ChristNote does not integrate with third-party analytics, advertising, or data collection services. The app uses standard iOS frameworks and does not include any third-party SDKs that collect data.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use voice notes for sermons or prayers?</div>
+                        <div class="faq-answer">When editing a note, tap the microphone icon to record a voice note. Perfect for capturing sermon audio, recording prayer requests, or quickly capturing thoughts during Bible study. You can play, rename, and manage all your recordings from Settings. Recordings can also be exported.</div>
+                    </div>
 
-    <h2>Children's Privacy</h2>
-    <p>ChristNote is suitable for users of all ages. We do not knowingly collect information from children because we do not collect information from anyone.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Web Notes feature?</div>
+                        <div class="faq-answer">Web Notes allows you to connect to external web-based note-taking services. You provide the URL, and the app displays the web service in a browser view. We don't access or store content from external services.</div>
+                    </div>
 
-    <h2>Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">Does ChristNote collect my data?</div>
+                        <div class="faq-answer">No. ChristNote is designed with privacy as a core principle. We do not collect, store, or transmit any personal information. All your notes remain on your device under your complete control.</div>
+                    </div>
 
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us through the support information provided in the App Store listing.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I set up reminders for devotions or prayer times?</div>
+                        <div class="faq-answer">From the notes list, long-press on a note and select "Add Reminder" from the context menu. Perfect for setting daily devotion reminders, prayer time alerts, or reminders to review specific Bible study notes. You can set the date and time, and the notification will deep-link directly to your note when it fires.</div>
+                    </div>
 
-    <h2>Your Rights</h2>
-    <p>Since we do not collect any data, there is no data for us to share, delete, or modify. All your data remains on your device under your complete control.</p>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use templates for sermon notes or Bible study?</div>
+                        <div class="faq-answer">Yes! Templates allow you to create reusable note formats perfect for consistent sermon note-taking, Bible study outlines, or prayer journal entries. You can create and manage templates from the Settings menu, and use them when creating new notes. Templates support localization for multiple languages.</div>
+                    </div>
 
-    <hr>
-    <p><small>This privacy policy applies to ChristNote version 1.0 and later.</small></p>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I organize my Bible study notes with tags?</div>
+                        <div class="faq-answer">When creating or editing a note, use the tag selector to add tags. Perfect for organizing by book of the Bible, sermon series, prayer topics, or study themes. You can then filter and search notes by tags. Tags help you organize and find your notes quickly.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I set up AI assistance?</div>
+                        <div class="faq-answer">AI features are optional. Go to Settings and configure your AI provider (OpenAI, Claude, or DeepSeek). You'll need to provide an API key, which is securely stored in your device's Keychain. Once configured, you can use "Ask AI" actions in the editor.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Reporting Issues</h2>
+                <p>If you encounter any bugs or issues with the app, please contact us at <a href="mailto:christnote.support@gmail.com" class="link">christnote.support@gmail.com</a> and include:</p>
+                <ul>
+                    <li>A clear description of the issue</li>
+                    <li>Steps to reproduce the problem</li>
+                    <li>Your device model and iOS version</li>
+                    <li>Screenshots or screen recordings if applicable</li>
+                    <li>Any error messages you see</li>
+                </ul>
+                <div class="highlight-box">
+                    <h3>💡 Tip</h3>
+                    <p>The more details you provide, the faster we can help resolve your issue!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Feature Requests</h2>
+                <p>We value your feedback! If you have ideas for new features or improvements, please send them to <a href="mailto:christnote.support@gmail.com" class="link">christnote.support@gmail.com</a>. We review all suggestions and consider them for future updates.</p>
+                <div class="info-box" style="margin-top: 24px;">
+                    <h3>✨ Your Input Matters</h3>
+                    <p>Your feedback helps us make ChristNote better for everyone!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Getting Started with Bible Study & Note-Taking</h2>
+                <p>New to ChristNote? Here are some quick tips to get started with your Bible study and Christian note-taking:</p>
+                <ul>
+                    <li><strong>Create your first note:</strong> Tap the "+" button to start taking sermon notes, Bible study notes, or begin your prayer journal</li>
+                    <li><strong>Format your notes:</strong> Select text to see formatting options (bold, italic, headers, etc.) - perfect for organizing sermon outlines</li>
+                    <li><strong>Add images:</strong> Tap the image icon while editing to insert photos of sermon slides or Bible study handouts</li>
+                    <li><strong>Set devotion reminders:</strong> Long-press a note and select "Add Reminder" to set daily devotion or prayer time alerts</li>
+                    <li><strong>Organize with tags:</strong> Add tags like "Sermon Notes", "Prayer Requests", or book names (e.g., "John", "Romans") when creating or editing notes</li>
+                    <li><strong>Use templates:</strong> Create templates in Settings for consistent sermon note formats or Bible study outlines</li>
+                    <li><strong>Record voice notes:</strong> Use the microphone icon to record sermon audio or quick prayer thoughts</li>
+                    <li><strong>Export your notes:</strong> Go to Settings to export notes, photos, and recordings - share sermon notes with your small group or create PDFs</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="index.html">Support</a>
+            </div>
+            <p class="last-updated">Last Updated: December 2025</p>
+            <p class="tagline">ChristNote - Your Bible study companion and Christian note-taking app for iPhone</p>
+        </div>
+    </div>
 </body>
 </html>
-
-
-
-
-
