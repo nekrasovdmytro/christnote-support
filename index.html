@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ChristNote Support - Get help with your Bible study notes, sermon notes, prayer journal, and Christian note-taking app for iPhone.">
     <title>Support - ChristNote | Bible Study & Christian Note-Taking App</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         * {
             margin: 0;
@@ -272,6 +273,70 @@
             margin: 0;
         }
         
+        .faq-section-wrapper {
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-white);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-section-wrapper:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .faq-section-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-light);
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+        
+        .faq-section-header:hover {
+            background: #f1f5f9;
+        }
+        
+        .faq-section-header h3 {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.4em;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .faq-section-toggle {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-section-wrapper.collapsed .faq-section-toggle {
+            transform: rotate(-90deg);
+        }
+        
+        .faq-section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            padding: 0 24px;
+        }
+        
+        .faq-section-wrapper:not(.collapsed) .faq-section-content {
+            max-height: 10000px;
+            padding: 24px;
+        }
+        
         .faq-container {
             display: flex;
             flex-direction: column;
@@ -455,6 +520,43 @@
             font-weight: 500;
         }
         
+        .app-store-link {
+            display: inline-block;
+            margin-top: 24px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .app-store-link:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .app-store-badge:hover {
+            background: #1a1a1a;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .app-store-badge::before {
+            content: '📱';
+            font-size: 1.3em;
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding: 12px;
@@ -517,6 +619,11 @@
                 font-size: 1.1em;
                 word-break: break-all;
             }
+            
+            .app-store-badge {
+                font-size: 0.95em;
+                padding: 10px 16px;
+            }
         }
     </style>
 </head>
@@ -529,6 +636,11 @@
                 </div>
                 <h1>ChristNote Support</h1>
                 <p>Your Bible study companion - We're here to help you grow in faith through better note-taking</p>
+                <div class="app-store-link">
+                    <a href="https://apps.apple.com/de/app/christnote/id6757015110?l=en-GB" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                        Download on the App Store
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -539,7 +651,7 @@
                         <h2>Get in Touch</h2>
                         <p>Have questions or need assistance? We're here to help!</p>
                         <div class="contact-email">
-                            <a href="mailto:chrirstnote@gmail.com">chrirstnote@gmail.com</a>
+                            <a href="mailto:dmytro.nekrasov@icloud.com">dmytro.nekrasov@icloud.com</a>
                         </div>
                         <p style="margin-top: 16px; font-size: 1em; opacity: 0.9;">We typically respond within 24-48 hours</p>
                     </div>
@@ -609,64 +721,1019 @@
                 </div>
             </div>
 
-            <div class="section">
+                        <div class="section">
                 <h2>Frequently Asked Questions</h2>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Getting Started</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                            <div class="faq-item">
+                                <div class="faq-question">What is ChristNote?</div>
+                                <div class="faq-answer">ChristNote is a privacy-first notes app for iOS with rich text editing, reminders, voice notes, attachments, and optional AI assistance. Notes are stored locally on-device by default.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">What iOS version is required?</div>
+                                <div class="faq-answer">iOS 15.0 or later is required. The app supports iPhone 13 and newer, including iPhone 17.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">How do I create my first note?</div>
+                                <div class="faq-answer">Tap the floating "+" button (if enabled) or tap the "Local Notes" tab and use the create button. You can also use the template picker to create notes from templates.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">How do I navigate between different sections?</div>
+                                <div class="faq-answer">Use the bottom menu bar to switch between tabs. You can hide the menu by tapping the chevron down button, and show it again by tapping the icon in the bottom-right corner.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Can I customize which tabs appear in the menu?</div>
+                                <div class="faq-answer">Yes, go to Settings → Dashboards to enable or disable specific dashboard tabs. You can also reorder tabs in Settings → Appearance → Tab Order.<br><br>---</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Core Notes Features</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
                 <div class="faq-container">
                     <div class="faq-item">
                         <div class="faq-question">How do I create a new note?</div>
-                        <div class="faq-answer">Tap the "+" button in the main notes list to create a new note. Perfect for taking sermon notes, Bible study notes, or journaling your devotions. You can also use the widget on your home screen for quick note creation, or use templates for consistent formatting.</div>
+                        <div class="faq-answer">• Tap the floating "+" button (if enabled)<br>• Tap "Create Note" from the template picker<br>• Use the app icon shortcut "New Note"<br>• Swipe down on the notes list and tap "Create Note"</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">Where are my Bible study notes and prayer journals stored?</div>
-                        <div class="faq-answer">All your notes - including sermon notes, Bible study notes, prayer journals, and spiritual reflections - are stored locally on your device. They never leave your device and are not synced to any external servers. This ensures your personal faith journey remains completely private and secure. You have complete control over your data.</div>
+                        <div class="faq-question">How do I edit a note?</div>
+                        <div class="faq-answer">Tap any note in the list to open it. The editor opens automatically and you can start typing.</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">Can I export my notes?</div>
-                        <div class="faq-answer">Yes! You can export your notes from the Settings menu. You can choose to export with or without encryption, and save them wherever you prefer. You can also export individual notes as PDF or Word-compatible RTF files.</div>
+                        <div class="faq-question">How do I delete a note?</div>
+                        <div class="faq-answer">• Swipe left on a note in the list and tap "Delete"<br>• Open a note, tap the menu (⋮) button, and select "Delete"<br>• Use multi-select mode: tap the selection icon, select notes, then tap delete</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">How do I use voice notes for sermons or prayers?</div>
-                        <div class="faq-answer">When editing a note, tap the microphone icon to record a voice note. Perfect for capturing sermon audio, recording prayer requests, or quickly capturing thoughts during Bible study. You can play, rename, and manage all your recordings from Settings. Recordings can also be exported.</div>
+                        <div class="faq-question">Can I recover deleted notes?</div>
+                        <div class="faq-answer">Yes! Go to Settings → Data Management → Deleted Notes to view and restore deleted notes. Notes are kept for 30 days before permanent deletion.</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">What is the Web Notes feature?</div>
-                        <div class="faq-answer">Web Notes allows you to connect to external web-based note-taking services. You provide the URL, and the app displays the web service in a browser view. We don't access or store content from external services.</div>
+                        <div class="faq-question">How do I pin a note to the top?</div>
+                        <div class="faq-answer">• Swipe right on a note in the list and tap "Pin"<br>• Open a note, tap the menu (⋮) button, and select "Pin"<br>• Use multi-select mode to pin multiple notes at once</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">Does ChristNote collect my data?</div>
-                        <div class="faq-answer">No. ChristNote is designed with privacy as a core principle. We do not collect, store, or transmit any personal information. All your notes remain on your device under your complete control.</div>
+                        <div class="faq-question">How do I search for notes?</div>
+                        <div class="faq-answer">Use the search bar at the top of the notes list. You can search by note content, tags, or note names.</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">How do I set up reminders for devotions or prayer times?</div>
-                        <div class="faq-answer">From the notes list, long-press on a note and select "Add Reminder" from the context menu. Perfect for setting daily devotion reminders, prayer time alerts, or reminders to review specific Bible study notes. You can set the date and time, and the notification will deep-link directly to your note when it fires.</div>
+                        <div class="faq-question">Can I sort my notes?</div>
+                        <div class="faq-answer">Yes, go to Settings → Notes → Sort Order. Options include:<br>• Most Recent (default)<br>• Oldest First<br>• Alphabetical</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">Can I use templates for sermon notes or Bible study?</div>
-                        <div class="faq-answer">Yes! Templates allow you to create reusable note formats perfect for consistent sermon note-taking, Bible study outlines, or prayer journal entries. You can create and manage templates from the Settings menu, and use them when creating new notes. Templates support localization for multiple languages.</div>
+                        <div class="faq-question">What are note names?</div>
+                        <div class="faq-answer">Notes can have optional names/titles. If not set, the app extracts the first line or header as a preview. You can set a custom name by tapping the note name field at the top of the editor.</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">How do I organize my Bible study notes with tags?</div>
-                        <div class="faq-answer">When creating or editing a note, use the tag selector to add tags. Perfect for organizing by book of the Bible, sermon series, prayer topics, or study themes. You can then filter and search notes by tags. Tags help you organize and find your notes quickly.</div>
+                        <div class="faq-question">How do I rename a note?</div>
+                        <div class="faq-answer">Open the note and tap on the name field at the top. You can also use the menu (⋮) → "Rename Note".</div>
                     </div>
-
                     <div class="faq-item">
-                        <div class="faq-question">How do I set up AI assistance?</div>
-                        <div class="faq-answer">AI features are optional. Go to Settings and configure your AI provider (OpenAI, Claude, or DeepSeek). You'll need to provide an API key, which is securely stored in your device's Keychain. Once configured, you can use "Ask AI" actions in the editor.</div>
+                        <div class="faq-question">What are projects?</div>
+                        <div class="faq-answer">Projects help organize notes into groups. You can assign notes to projects and filter by project in the notes list.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I assign a note to a project?</div>
+                        <div class="faq-answer">Open a note, tap the menu (⋮) button, and select "Assign to Project". You can also use multi-select to assign multiple notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I filter notes by project?</div>
+                        <div class="faq-answer">Yes, use the filter bar in the notes list to select a project filter.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is multi-select mode?</div>
+                        <div class="faq-answer">Tap the selection icon (checkmark) in the notes list toolbar to enter multi-select mode. You can then select multiple notes and perform bulk actions like delete, pin, tag, or assign to project.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I duplicate a note?</div>
+                        <div class="faq-answer">Open a note, tap the menu (⋮) button, and select "Duplicate Note".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I share notes with other apps?</div>
+                        <div class="faq-answer">Yes, open a note, tap the menu (⋮) button, and select "Share". You can export as PDF, RTF (Word-compatible), Markdown, or plain text.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are connected notes?</div>
+                        <div class="faq-answer">Connected notes allow you to link related notes together. This is useful for organizing related content, creating knowledge graphs, or building book chapters.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I connect notes?</div>
+                        <div class="faq-answer">Open a note, tap the menu (⋮) button, and select "Connected Notes". Search and select notes to connect. Tap again to disconnect.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I see all notes connected to a specific note?</div>
+                        <div class="faq-answer">Yes, connected notes appear at the bottom of the note editor. Tap on a connected note to open it.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are prophetic notes?</div>
+                        <div class="faq-answer">Prophetic notes are special note types for dreams, visions, and inspirations. They can be organized by type and viewed in a calendar format.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a prophetic note?</div>
+                        <div class="faq-answer">Use the "dream" template or add the "prophetic" tag. You can also filter by prophetic type in the notes list.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Prophetic Calendar?</div>
+                        <div class="faq-answer">The Prophetic Calendar shows prophetic notes organized by date. Access it from the notes list or via app shortcuts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I filter notes by prophetic type?</div>
+                        <div class="faq-answer">Yes, use the prophetic type filter in the notes list to filter by Dream, Vision, or Inspiration.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Rich Text Editor</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What editor engines are available?</div>
+                        <div class="faq-answer">The app supports two editor engines:<br>• iOS Native Editor (default) - Uses UITextView for native iOS editing<br>• HTML Editor - Alternative editor for web-based content<br><br>You can switch between them in Settings → Editor → Editor Engine.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What formatting options are available?</div>
+                        <div class="faq-answer">The editor supports:<br>• Headers (H1, H2, H3)<br>• Bold, Italic, Underline, Strikethrough<br>• Text highlighting (7 colors)<br>• Text alignment (left, center, right, justify)<br>• Bulleted lists<br>• Numbered lists<br>• Dividers<br>• Clear formatting</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I format text?</div>
+                        <div class="faq-answer">Select text and use the formatting toolbar that appears. You can also use keyboard shortcuts:<br>• **Bold:** ⌘B<br>• **Italic:** ⌘I<br>• **Underline:** ⌘U</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Focus Mode?</div>
+                        <div class="faq-answer">Focus Mode provides a distraction-free writing experience by hiding the header and other UI elements. It's enabled by default but can be toggled in Settings → Editor.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I exit Focus Mode?</div>
+                        <div class="faq-answer">Tap the "Exit Focus Mode" button that appears, or swipe down from the top.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I customize the font?</div>
+                        <div class="faq-answer">Yes, go to Settings → Editor → Font Family to choose from bundled Google fonts or system fonts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I adjust line spacing?</div>
+                        <div class="faq-answer">Yes, go to Settings → Editor → Line Spacing to adjust the spacing between lines.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I insert images?</div>
+                        <div class="faq-answer">• Tap the image button in the formatting toolbar<br>• Use Photos picker to select images<br>• Paste images directly from clipboard<br>• Use the camera button to take photos</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I resize images in notes?</div>
+                        <div class="faq-answer">Yes, tap an image to select it, then use the resize options:<br>• Small (160px)<br>• Medium (240px)<br>• Large (320px)<br>• Fit to width</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I draw on images?</div>
+                        <div class="faq-answer">Yes, select an image and tap "Draw on Image" to open the drawing editor.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I insert a divider?</div>
+                        <div class="faq-answer">Tap the divider button in the formatting toolbar, or type "---" and it will convert to a divider.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are highlights?</div>
+                        <div class="faq-answer">Highlights allow you to mark important text with colored backgrounds. There are 7 highlight colors available.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I highlight text?</div>
+                        <div class="faq-answer">Select text and tap the highlight button in the formatting toolbar. Choose a color from the picker.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I remove highlighting?</div>
+                        <div class="faq-answer">Yes, select highlighted text and tap "Clear Highlight" or choose "None" from the highlight color picker.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create lists?</div>
+                        <div class="faq-answer">Tap the list button in the formatting toolbar and choose "Bulleted List" or "Numbered List". You can also start typing "- " or "1. " to auto-create lists.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I nest lists?</div>
+                        <div class="faq-answer">Yes, indent list items using the indent buttons or by tapping Tab on the keyboard.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I clear all formatting?</div>
+                        <div class="faq-answer">Select text and tap "Clear Formatting" in the formatting toolbar.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Does the editor support Markdown?</div>
+                        <div class="faq-answer">The editor doesn't use Markdown syntax during editing, but you can export notes as Markdown. Some Markdown features are supported through the formatting toolbar.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I undo/redo changes?</div>
+                        <div class="faq-answer">Yes, shake your device or use the undo/redo buttons if available. Standard iOS text editing undo/redo works.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I copy formatted text?</div>
+                        <div class="faq-answer">Select text and use the standard copy gesture or menu. Formatted text is preserved when pasting within the app.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I paste plain text only?</div>
+                        <div class="faq-answer">Yes, when pasting, you'll see paste options. Choose "Paste as Plain Text" to remove formatting.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Dashboards</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What are dashboards?</div>
+                        <div class="faq-answer">Dashboards are specialized views that organize and display specific types of content:<br>• Highlights Dashboard<br>• Audio Dashboard<br>• Attachments Dashboard<br>• Secrets Dashboard<br>• Todo Dashboard<br>• Connected Notes Dashboard<br>• AI Communications Dashboard<br>• AI Overview Dashboard<br>• Canvas Dashboard</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I enable/disable dashboards?</div>
+                        <div class="faq-answer">Go to Settings → Dashboards and toggle the dashboards you want to use.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Highlights Dashboard?</div>
+                        <div class="faq-answer">The Highlights Dashboard shows all highlighted text from your notes, organized by color. Useful for reviewing important passages.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I access highlighted text?</div>
+                        <div class="faq-answer">Open the Highlights Dashboard tab, select a highlight color, and tap on any highlight to open the source note.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Audio Dashboard?</div>
+                        <div class="faq-answer">The Audio Dashboard shows all voice recordings attached to notes. You can play, rename, and manage recordings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I play a voice recording?</div>
+                        <div class="faq-answer">Open the Audio Dashboard, tap on a recording to play it. The player appears at the bottom with controls.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I rename voice recordings?</div>
+                        <div class="faq-answer">Yes, tap the menu (⋮) next to a recording in the Audio Dashboard and select "Rename".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Attachments Dashboard?</div>
+                        <div class="faq-answer">The Attachments Dashboard lists all file attachments (PDFs, images, etc.) across all notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I open an attachment?</div>
+                        <div class="faq-answer">Tap on an attachment in the Attachments Dashboard to open it. PDFs open in Quick Look.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Secrets Dashboard?</div>
+                        <div class="faq-answer">The Secrets Dashboard shows all notes tagged as "secret". These notes are encrypted and require authentication to view.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a secret note?</div>
+                        <div class="faq-answer">Add the "secret" tag to a note, or use the "Create Secret Note" option. You'll be prompted to set a password.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I unlock a secret note?</div>
+                        <div class="faq-answer">Tap on a secret note and enter your password or use Face ID/Touch ID if enabled.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Todo Dashboard?</div>
+                        <div class="faq-answer">The Todo Dashboard shows all notes with todo lists, organized by completion status.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a todo list?</div>
+                        <div class="faq-answer">Use the "todo" template or add the "todo" tag to a note. Then tap the todo button in the editor toolbar.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I mark todos as complete?</div>
+                        <div class="faq-answer">Yes, tap the checkbox next to each todo item to mark it complete or incomplete.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Connected Notes Dashboard?</div>
+                        <div class="faq-answer">The Connected Notes Dashboard shows a visual graph of all connected notes, helping you see relationships between notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the AI Communications Dashboard?</div>
+                        <div class="faq-answer">The AI Communications Dashboard shows all AI interactions and conversations stored in your notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the AI Overview Dashboard?</div>
+                        <div class="faq-answer">The AI Overview Dashboard uses AI to analyze and categorize all your notes, grouping them by meaning and themes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I generate an AI Overview?</div>
+                        <div class="faq-answer">Open the AI Overview Dashboard and tap "Generate Overview". You can customize the prompt or use the default.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Canvas Dashboard?</div>
+                        <div class="faq-answer">The Canvas Dashboard shows all canvas boards - visual workspaces for organizing notes spatially.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a canvas?</div>
+                        <div class="faq-answer">Open the Canvas Dashboard and tap "New Canvas". You can add notes to canvases by dragging or using the menu.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>AI Features</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Does the app require AI?</div>
+                        <div class="faq-answer">No, AI features are completely optional. The app works fully without AI configured.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What AI providers are supported?</div>
+                        <div class="faq-answer">The app supports:<br>• OpenAI (GPT models)<br>• Claude (Anthropic)<br>• DeepSeek<br><br>You can only use one provider at a time.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I set up AI?</div>
+                        <div class="faq-answer">Go to Settings → AI Interactions → Setup. Enter your API key. See `Docs/AI_SETUP.md` for detailed instructions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Where are API keys stored?</div>
+                        <div class="faq-answer">API keys are stored securely in the iOS Keychain, not in plain text.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I ask AI a question in a note?</div>
+                        <div class="faq-answer">Open a note, tap the AI button (sparkles icon) in the toolbar, type your question, and tap "Ask".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What can I do with AI responses?</div>
+                        <div class="faq-answer">You can:<br>• Copy the response<br>• Append to note<br>• Replace note content<br>• Save the conversation</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are AI quick actions?</div>
+                        <div class="faq-answer">Quick actions appear in the editor toolbar when AI is configured:<br>• Summarize<br>• Improve Writing<br>• Translate<br>• Format with AI</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use AI quick actions?</div>
+                        <div class="faq-answer">Select text (or leave empty for the whole note) and tap a quick action button. The AI will process your selection.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is AI Interpretation?</div>
+                        <div class="faq-answer">AI Interpretation analyzes prophetic notes (dreams, visions) and provides insights. Access it from the note menu.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I customize AI prompts?</div>
+                        <div class="faq-answer">Yes, go to Settings → AI Interactions to customize prompts for different actions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is AI Search?</div>
+                        <div class="faq-answer">AI Search allows you to search notes using natural language queries, finding notes by meaning rather than exact text matches.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use AI Search?</div>
+                        <div class="faq-answer">Tap the AI Search button in the notes list and enter your query in natural language.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I see my AI usage/history?</div>
+                        <div class="faq-answer">Yes, the AI Communications Dashboard shows all AI interactions. You can also view AI history per note in the note menu.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are AI conversations saved?</div>
+                        <div class="faq-answer">Yes, AI conversations are saved in notes. You can view them in the AI Communications Dashboard or within individual notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I delete AI conversations?</div>
+                        <div class="faq-answer">Yes, open a note with AI conversations, tap the menu, and select "Delete AI Conversation" or remove individual messages.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Media & Attachments</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What file types can I attach?</div>
+                        <div class="faq-answer">You can attach:<br>• Images (JPEG, PNG, HEIC)<br>• PDFs<br>• Other document types supported by iOS</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I attach a file to a note?</div>
+                        <div class="faq-answer">• Open a note, tap the attachments button<br>• Select "Add Attachment"<br>• Choose from Files app, Photos, or Camera</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I attach multiple files at once?</div>
+                        <div class="faq-answer">Yes, use the "Add Multiple Attachments" option to select multiple files.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I view attachments?</div>
+                        <div class="faq-answer">Tap the attachments button in a note to see all attachments. Tap on an attachment to open it.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export all attachments?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export All Attachments.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I delete an attachment?</div>
+                        <div class="faq-answer">Open the attachments sheet in a note, swipe left on an attachment, and tap "Delete".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are attachments stored locally?</div>
+                        <div class="faq-answer">Yes, all attachments are stored locally on your device.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I resize images after inserting them?</div>
+                        <div class="faq-answer">Yes, tap an image to select it, then use the resize options in the menu.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I draw on images?</div>
+                        <div class="faq-answer">Yes, select an image and tap "Draw on Image" to open the drawing editor.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I insert images from Photos?</div>
+                        <div class="faq-answer">Tap the image button in the toolbar, then select "Photos" and choose images from your photo library.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to grant photo permissions?</div>
+                        <div class="faq-answer">Yes, the app will request permission the first time you try to access photos.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I take photos directly in the app?</div>
+                        <div class="faq-answer">Yes, tap the camera button in the image picker to take a photo.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I export all photos from notes?</div>
+                        <div class="faq-answer">Go to Settings → Data Management → Export All Photos.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Voice Notes</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I record a voice note?</div>
+                        <div class="faq-answer">• Open a note and tap the microphone button in the toolbar<br>• Or create a note with the "voice-note" tag</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I pause and resume recording?</div>
+                        <div class="faq-answer">Yes, the voice recorder has pause/resume controls.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I play a voice recording?</div>
+                        <div class="faq-answer">Tap the play button on a voice recording in a note, or open the Audio Dashboard to see all recordings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I rename voice recordings?</div>
+                        <div class="faq-answer">Yes, tap the menu (⋮) next to a recording and select "Rename".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I delete a voice recording?</div>
+                        <div class="faq-answer">Tap the menu (⋮) next to a recording and select "Delete".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export voice recordings?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export All Voice Recordings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Where are voice recordings stored?</div>
+                        <div class="faq-answer">Voice recordings are stored locally on your device, attached to notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What audio format is used?</div>
+                        <div class="faq-answer">Recordings are stored in a standard iOS audio format (typically M4A).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I attach multiple voice recordings to one note?</div>
+                        <div class="faq-answer">Yes, you can record multiple voice notes in a single note.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Reminders</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I add a reminder to a note?</div>
+                        <div class="faq-answer">• Swipe right on a note in the list and tap "Reminder"<br>• Open a note, tap the menu (⋮), and select "Add Reminder"<br>• Use multi-select to add reminders to multiple notes</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I set recurring reminders?</div>
+                        <div class="faq-answer">Yes, when creating a reminder, toggle "Repeat Daily" for daily reminders.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I edit a reminder?</div>
+                        <div class="faq-answer">Go to Settings → Reminders, tap on a reminder, and edit the date/time.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I delete a reminder?</div>
+                        <div class="faq-answer">Go to Settings → Reminders, swipe left on a reminder, and tap "Delete".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What happens when a reminder fires?</div>
+                        <div class="faq-answer">You'll receive a notification. Tapping the notification opens the linked note directly.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do reminders work when the app is closed?</div>
+                        <div class="faq-answer">Yes, reminders use iOS notifications and work even when the app is closed.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I see all my reminders?</div>
+                        <div class="faq-answer">Yes, go to Settings → Reminders to see a list of all reminders.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to grant notification permissions?</div>
+                        <div class="faq-answer">Yes, the app will request notification permission when you create your first reminder.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Templates</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What are templates?</div>
+                        <div class="faq-answer">Templates are pre-formatted note structures that help you create notes quickly with consistent formatting.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use a template?</div>
+                        <div class="faq-answer">Tap the template picker button (or swipe down on notes list) and select a template. The note opens with the template content.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What templates are available?</div>
+                        <div class="faq-answer">Default templates include:<br>• Blank Note<br>• Dream<br>• Todo List<br>• And more (customizable)</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I create custom templates?</div>
+                        <div class="faq-answer">Yes, go to Settings → Templates → Manage Templates to create, edit, or delete templates.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I edit a template?</div>
+                        <div class="faq-answer">Go to Settings → Templates → Manage Templates, tap on a template, and select "Edit".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I delete templates?</div>
+                        <div class="faq-answer">Yes, go to Settings → Templates → Manage Templates and swipe left on a template to delete it.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are templates localized?</div>
+                        <div class="faq-answer">Yes, templates support multiple languages. You can set the language when creating a template.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Tags & Organization</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I add tags to a note?</div>
+                        <div class="faq-answer">• Open a note and tap the tags button<br>• Or swipe right on a note in the list and tap "Tags"<br>• Use multi-select to tag multiple notes</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I remove a tag?</div>
+                        <div class="faq-answer">Open the tag editor and tap the X next to a tag, or swipe left on a tag in the tag bar.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I filter notes by tag?</div>
+                        <div class="faq-answer">Yes, tap on a tag in the tag bar at the top of the notes list to filter.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I see all tags?</div>
+                        <div class="faq-answer">Tags appear in the tag bar above the notes list. You can also go to Settings → Tags to manage tags.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I rename a tag?</div>
+                        <div class="faq-answer">Yes, go to Settings → Tags, tap on a tag, and select "Rename".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I delete a tag?</div>
+                        <div class="faq-answer">Yes, go to Settings → Tags, swipe left on a tag, and tap "Delete". You'll be asked to confirm.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are protected tags?</div>
+                        <div class="faq-answer">Protected tags (like "markdown", "dream", "secret") have special functionality and cannot be deleted.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use bulk tagging?</div>
+                        <div class="faq-answer">Enter multi-select mode, select multiple notes, then tap "Add Tags" to tag them all at once.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I assign colors to tags?</div>
+                        <div class="faq-answer">Yes, some tags have associated colors. You can filter by color in the notes list.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I filter by color?</div>
+                        <div class="faq-answer">Use the color filter in the filter bar above the notes list.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Export & Import</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I export a single note?</div>
+                        <div class="faq-answer">Open a note, tap the menu (⋮), and select "Export". Choose PDF, RTF, Markdown, or Plain Text.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I export all notes?</div>
+                        <div class="faq-answer">Go to Settings → Data Management → Export Notes. You can export as JSON with optional encryption.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I encrypt my exports?</div>
+                        <div class="faq-answer">Yes, when exporting, toggle "Encrypt Export" and set a password.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I import notes?</div>
+                        <div class="faq-answer">Go to Settings → Data Management → Import Notes and select a JSON file. If encrypted, enter the password.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I import from CSV/Excel?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Import from CSV. The CSV should have columns for title, content, tags, etc.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What CSV format is required?</div>
+                        <div class="faq-answer">The CSV should have columns: Title, Content, Tags (comma-separated), Created Date, etc. See Settings for the exact format.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export secrets separately?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export Secrets to export only secret notes (encrypted).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I import secrets?</div>
+                        <div class="faq-answer">Go to Settings → Data Management → Import Secrets and select an encrypted secrets file.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What formats can I export to?</div>
+                        <div class="faq-answer">• PDF (for sharing/printing)<br>• RTF (Word-compatible)<br>• Markdown (.md)<br>• Plain Text (.txt)<br>• JSON (for backup/import)</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export photos separately?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export All Photos.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export voice recordings separately?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export All Voice Recordings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I export attachments separately?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Export All Attachments.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Settings & Configuration</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I access settings?</div>
+                        <div class="faq-answer">Tap the Settings tab in the bottom menu bar, or use the app shortcut "Open Settings".</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What can I configure in settings?</div>
+                        <div class="faq-answer">Settings include:<br>• App Presets (quick configuration)<br>• Storage & Sync (iCloud)<br>• Reminders<br>• Writing Analytics<br>• Appearance (theme, fonts, layout)<br>• Dashboards (enable/disable)<br>• Notes (sort order, filters)<br>• Templates<br>• Tags<br>• Editor Toolbar<br>• Widgets<br>• App Icon Shortcuts<br>• Advanced Options<br>• PDF Settings<br>• Data Management<br>• Prayer Settings<br>• Web Notes<br>• Legal & Privacy<br>• About</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are App Presets?</div>
+                        <div class="faq-answer">App Presets are pre-configured settings bundles that quickly set up the app for specific use cases (e.g., "Writer", "Student", "Ministry").</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use an App Preset?</div>
+                        <div class="faq-answer">Go to Settings → App Presets and select a preset. Your settings will be updated automatically.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I create custom App Presets?</div>
+                        <div class="faq-answer">Yes, configure your settings, then go to Settings → App Presets → Save Current Configuration as Preset.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I enable iCloud sync?</div>
+                        <div class="faq-answer">Go to Settings → Storage & Sync → iCloud Sync and toggle it on. You'll need to be signed into iCloud.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Writing Analytics?</div>
+                        <div class="faq-answer">Writing Analytics tracks your writing statistics like word count, notes created, writing streaks, etc.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I customize the appearance?</div>
+                        <div class="faq-answer">Yes, go to Settings → Appearance to configure:<br>• Theme (Light/Dark/Auto)<br>• Font Family<br>• Font Size<br>• Line Spacing<br>• Tab Order<br>• Menu Visibility</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I change the language?</div>
+                        <div class="faq-answer">Go to Settings → Appearance → Language and select your preferred language.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What languages are supported?</div>
+                        <div class="faq-answer">The app supports multiple languages. Check Settings → Appearance → Language for available options.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I customize the editor toolbar?</div>
+                        <div class="faq-answer">Yes, go to Settings → Editor Toolbar to show/hide specific buttons.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I configure widgets?</div>
+                        <div class="faq-answer">Go to Settings → Widgets to configure widget settings and create widget shortcuts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are App Icon Shortcuts?</div>
+                        <div class="faq-answer">App Icon Shortcuts allow you to add quick actions to your home screen. Long-press the app icon to see shortcuts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I configure App Icon Shortcuts?</div>
+                        <div class="faq-answer">Go to Settings → App Icon Shortcuts to enable/disable specific shortcuts.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What advanced options are available?</div>
+                        <div class="faq-answer">Advanced options include:<br>• Debug settings<br>• Performance options<br>• Experimental features</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I reset all settings?</div>
+                        <div class="faq-answer">Yes, go to Settings → Reset Settings. This will restore default settings but won't delete your notes.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I delete all notes?</div>
+                        <div class="faq-answer">Go to Settings → Data Management → Delete All Notes. You'll need to type "DELETE" to confirm.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I delete all connections between notes?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Delete All Connections.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I delete all canvases?</div>
+                        <div class="faq-answer">Yes, go to Settings → Data Management → Delete All Canvases.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Privacy & Security</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Where are my notes stored?</div>
+                        <div class="faq-answer">Notes are stored locally on your device by default. You can optionally enable iCloud sync.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are my notes encrypted?</div>
+                        <div class="faq-answer">Regular notes are stored in plain text locally. Secret notes are encrypted with a password you set.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I encrypt all my notes?</div>
+                        <div class="faq-answer">You can encrypt exports, but regular notes are stored unencrypted for performance. Use secret notes for sensitive content.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Does the app collect data?</div>
+                        <div class="faq-answer">No, the app is privacy-first and doesn't collect user data. All data stays on your device.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What about AI features?</div>
+                        <div class="faq-answer">When using AI features, your content is sent to the AI provider you configure. Review their privacy policy. AI is completely optional.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are API keys secure?</div>
+                        <div class="faq-answer">Yes, API keys are stored in the iOS Keychain, which is encrypted and secure.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use the app offline?</div>
+                        <div class="faq-answer">Yes, the app works fully offline. Only AI features require internet connectivity.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What permissions does the app need?</div>
+                        <div class="faq-answer">The app may request:<br>• Photo Library (to insert images)<br>• Camera (to take photos)<br>• Notifications (for reminders)<br>• Microphone (for voice notes)<br><br>All permissions are optional and only requested when needed.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Troubleshooting</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">My notes aren't syncing to iCloud</div>
+                        <div class="faq-answer">• Check that iCloud is enabled in Settings → Storage & Sync<br>• Ensure you're signed into iCloud on your device<br>• Check iCloud storage space<br>• Try toggling iCloud sync off and on</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">The app is slow or laggy</div>
+                        <div class="faq-answer">• Try closing and reopening the app<br>• Check if you have many notes (consider archiving old ones)<br>• Disable unused dashboards<br>• Check available device storage</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">I can't find a note I created</div>
+                        <div class="faq-answer">• Check if filters are applied (tags, colors, search)<br>• Check if the note was deleted (go to Deleted Notes)<br>• Try searching with different keywords<br>• Check if the note is in a different project</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Voice recordings aren't playing</div>
+                        <div class="faq-answer">• Check device volume<br>• Ensure the recording file exists (check Audio Dashboard)<br>• Try restarting the app<br>• Check if the note wasn't deleted</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Images aren't loading</div>
+                        <div class="faq-answer">• Check photo library permissions<br>• Ensure images weren't deleted from Photos<br>• Try re-inserting the image<br>• Check available device storage</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Reminders aren't working</div>
+                        <div class="faq-answer">• Check notification permissions in iOS Settings<br>• Ensure reminders are enabled in Settings → Reminders<br>• Check that notification time hasn't passed<br>• Verify device date/time is correct</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">AI features aren't working</div>
+                        <div class="faq-answer">• Check that AI is configured in Settings → AI Interactions<br>• Verify your API key is correct<br>• Check internet connectivity<br>• Review API usage limits with your provider</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">I forgot my secret note password</div>
+                        <div class="faq-answer">Unfortunately, secret notes are encrypted and cannot be recovered without the password. Make sure to remember or securely store your password.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">The app crashed</div>
+                        <div class="faq-answer">• Try restarting the app<br>• Check for app updates<br>• If persistent, try resetting settings (this won't delete notes)<br>• Contact support with crash details</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can't export notes</div>
+                        <div class="faq-answer">• Check available device storage<br>• Ensure you have permission to save files<br>• Try exporting to a different location<br>• Check if the export file format is supported</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Import isn't working</div>
+                        <div class="faq-answer">• Verify the file format is correct (JSON or CSV)<br>• Check if the file is encrypted (enter password if needed)<br>• Ensure the file isn't corrupted<br>• Check available device storage</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Templates aren't showing</div>
+                        <div class="faq-answer">• Go to Settings → Templates to verify templates exist<br>• Try creating a new template<br>• Check if templates were accidentally deleted</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Tags aren't appearing</div>
+                        <div class="faq-answer">• Check Settings → Tags to see if tags exist<br>• Try creating a new tag<br>• Verify filters aren't hiding tagged notes<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Additional Features</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">What are Canvas Boards?</div>
+                        <div class="faq-answer">Canvas Boards are visual workspaces where you can organize notes spatially, like a whiteboard or mind map.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a Canvas Board?</div>
+                        <div class="faq-answer">Open the Canvas Dashboard and tap "New Canvas". You can then add notes by dragging or using the menu.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I add notes to multiple canvases?</div>
+                        <div class="faq-answer">Yes, a note can be added to multiple canvas boards.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Web Notes?</div>
+                        <div class="faq-answer">Web Notes allows you to access any online note-taking service (like Notion, Google Keep) directly from the app.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I set up Web Notes?</div>
+                        <div class="faq-answer">Go to Settings → Web Notes and enter the URL of your web notes service.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Daily Blessing?</div>
+                        <div class="faq-answer">The Daily Blessing is a welcome screen that can appear on app launch, showing inspirational content.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I disable the Daily Blessing?</div>
+                        <div class="faq-answer">Yes, go to Settings → Appearance to disable it, or dismiss it when it appears.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are Writing Analytics?</div>
+                        <div class="faq-answer">Writing Analytics tracks statistics like:<br>• Total notes created<br>• Total words written<br>• Writing streaks<br>• Notes per day/week/month</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Where can I see Writing Analytics?</div>
+                        <div class="faq-answer">Go to Settings → Writing Analytics to view your statistics.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are App Icon Shortcuts?</div>
+                        <div class="faq-answer">App Icon Shortcuts are quick actions accessible by long-pressing the app icon on your home screen.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What shortcuts are available?</div>
+                        <div class="faq-answer">Available shortcuts include:<br>• New Note<br>• New Dream<br>• Open Local Notes<br>• Open Secrets<br>• Open Todos<br>• Open Settings<br>• And more</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use widgets?</div>
+                        <div class="faq-answer">Yes, the app supports iOS widgets. Go to Settings → Widgets to configure widget settings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Dynamic Island support?</div>
+                        <div class="faq-answer">On iPhone 14 Pro and newer, the app can show note information in the Dynamic Island.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I enable Dynamic Island?</div>
+                        <div class="faq-answer">Go to Settings → Advanced → Dynamic Island (if available on your device).</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Recent Work feature?</div>
+                        <div class="faq-answer">Recent Work shows your recently edited notes for quick access.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I access Recent Work?</div>
+                        <div class="faq-answer">Tap the "Recent Work" button in the notes list toolbar.<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Tips & Best Practices</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How can I organize my notes better?</div>
+                        <div class="faq-answer">• Use tags consistently<br>• Create projects for related notes<br>• Use templates for common note types<br>• Connect related notes<br>• Pin important notes</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the best way to use secret notes?</div>
+                        <div class="faq-answer">• Use a strong, memorable password<br>• Consider using Face ID/Touch ID for convenience<br>• Don't forget your password (it can't be recovered)<br>• Use secret notes only for truly sensitive content</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How can I improve writing productivity?</div>
+                        <div class="faq-answer">• Use Focus Mode for distraction-free writing<br>• Enable Writing Analytics to track progress<br>• Use templates for common formats<br>• Set up reminders for regular writing</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the best way to use AI features?</div>
+                        <div class="faq-answer">• Use AI for brainstorming and improvement<br>• Review AI suggestions before accepting<br>• Save important AI conversations<br>• Be mindful of API costs</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How should I back up my notes?</div>
+                        <div class="faq-answer">• Regularly export notes (Settings → Export Notes)<br>• Enable iCloud sync for automatic backup<br>• Export to multiple locations<br>• Consider encrypting exports for sensitive content</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use the app for book writing?</div>
+                        <div class="faq-answer">Yes! The app is great for book writing:<br>• Use connected notes for chapters<br>• Use templates for consistent formatting<br>• Use the Canvas Dashboard for visual organization<br>• Export chapters as needed<br><br>---</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-section-wrapper collapsed">
+                    <div class="faq-section-header">
+                        <h3>Support & Resources</h3>
+                        <span class="faq-section-toggle">▼</span>
+                    </div>
+                    <div class="faq-section-content">
+                        <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Where can I get help?</div>
+                        <div class="faq-answer">Check the documentation files in the app or contact support through the app settings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is there documentation?</div>
+                        <div class="faq-answer">Yes, see:<br>• `README.md` - Basic information<br>• `FEATURES.md` - Feature overview<br>• `Docs/AI_SETUP.md` - AI setup guide<br>• This Q&A document</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I report a bug?</div>
+                        <div class="faq-answer">Contact support through the app or report issues via the appropriate channels.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I request features?</div>
+                        <div class="faq-answer">Feature requests can be submitted through support channels.<br><br>---<br><br>*Last Updated: February 2026* *App Version: Check Settings → About for current version*</div>
+                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section">
+<div class="section">
                 <h2>Reporting Issues</h2>
-                <p>If you encounter any bugs or issues with the app, please contact us at <a href="mailto:chrirstnote@gmail.com" class="link">chrirstnote@gmail.com</a> and include:</p>
+                <p>If you encounter any bugs or issues with the app, please contact us at <a href="mailto:dmytro.nekrasov@icloud.com" class="link">dmytro.nekrasov@icloud.com</a> and include:</p>
                 <ul>
                     <li>A clear description of the issue</li>
                     <li>Steps to reproduce the problem</li>
@@ -682,7 +1749,7 @@
 
             <div class="section">
                 <h2>Feature Requests</h2>
-                <p>We value your feedback! If you have ideas for new features or improvements, please send them to <a href="mailto:chrirstnote@gmail.com" class="link">chrirstnote@gmail.com</a>. We review all suggestions and consider them for future updates.</p>
+                <p>We value your feedback! If you have ideas for new features or improvements, please send them to <a href="mailto:dmytro.nekrasov@icloud.com" class="link">dmytro.nekrasov@icloud.com</a>. We review all suggestions and consider them for future updates.</p>
                 <div class="info-box" style="margin-top: 24px;">
                     <h3>✨ Your Input Matters</h3>
                     <p>Your feedback helps us make ChristNote better for everyone!</p>
@@ -711,9 +1778,23 @@
                 <span>|</span>
                 <a href="index.html">Support</a>
             </div>
-            <p class="last-updated">Last Updated: December 2025</p>
+            <p class="last-updated">Last Updated: February 2026</p>
             <p class="tagline">ChristNote - Your Bible study companion and Christian note-taking app for iPhone</p>
         </div>
     </div>
+    
+    <script>
+        // Add click handlers to all FAQ section headers
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqSections = document.querySelectorAll('.faq-section-header');
+            
+            faqSections.forEach(header => {
+                header.addEventListener('click', function() {
+                    const wrapper = this.closest('.faq-section-wrapper');
+                    wrapper.classList.toggle('collapsed');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

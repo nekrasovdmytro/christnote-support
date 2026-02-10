@@ -1,0 +1,54 @@
+/* A new stylesheet for a fresh look. */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.header, .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.main {
+    padding: 20px;
+    background: #fff;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.qa-section {
+    margin-top: 20px;
+}
+
+.qa-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.qa-question {
+    font-weight: bold;
+}
+
+.qa-answer {
+    margin-top: 5px;
+}
