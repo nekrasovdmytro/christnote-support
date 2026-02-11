@@ -557,6 +557,134 @@
             font-size: 1.3em;
         }
         
+        .search-container {
+            margin: 32px 0;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            font-size: 1.1em;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-white);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            pointer-events: none;
+        }
+        
+        .search-results-count {
+            margin-top: 12px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+        
+        .faq-section-wrapper.hidden {
+            display: none;
+        }
+        
+        .faq-item.hidden {
+            display: none;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+        
+        .no-results-icon {
+            font-size: 3em;
+            margin-bottom: 16px;
+        }
+        
+        .spiritual-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .spiritual-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spiritual-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .spiritual-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .spiritual-card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .spiritual-card.highlight {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-color: var(--warning-color);
+        }
+        
+        .spiritual-card h3 {
+            color: var(--text-primary);
+            font-size: 1.5em;
+            margin-bottom: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .spiritual-card p {
+            color: var(--text-secondary);
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        
+        .spiritual-card p:last-child {
+            margin-bottom: 0;
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding: 12px;
@@ -623,6 +751,58 @@
             .app-store-badge {
                 font-size: 0.95em;
                 padding: 10px 16px;
+            }
+            
+            .search-input {
+                font-size: 1em;
+                padding: 14px 18px 14px 45px;
+            }
+            
+            .search-icon {
+                left: 15px;
+                font-size: 1.1em;
+            }
+            
+            .faq-section-header {
+                padding: 16px 20px;
+            }
+            
+            .faq-section-header h3 {
+                font-size: 1.2em;
+            }
+            
+            .faq-item {
+                padding: 20px;
+            }
+            
+            .faq-question {
+                font-size: 1.05em;
+            }
+            
+            .faq-answer {
+                font-size: 0.95em;
+                padding-left: 0;
+            }
+            
+            .spiritual-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .spiritual-card {
+                padding: 24px;
+            }
+            
+            .spiritual-card h3 {
+                font-size: 1.3em;
+            }
+            
+            .spiritual-card p {
+                font-size: 1em;
+            }
+            
+            .search-container {
+                margin: 24px 0;
             }
         }
     </style>
@@ -721,8 +901,42 @@
                 </div>
             </div>
 
+            <div class="section">
+                <h2>About Our Faith</h2>
+                <div class="spiritual-content">
+                    <div class="spiritual-card">
+                        <h3>✝️ Jesus Christ</h3>
+                        <p>Jesus Christ is the Son of God, our Savior and Redeemer. Through His life, death, and resurrection, He made a way for us to have eternal life and a personal relationship with God. Jesus said, "I am the way, the truth, and the life. No one comes to the Father except through me" (John 14:6).</p>
+                        <p>In ChristNote, we encourage you to use this app to deepen your relationship with Jesus through prayer, Bible study, and reflection on His Word. Let your notes be a testament to how God is working in your life through His Son.</p>
+                    </div>
+                    
+                    <div class="spiritual-card">
+                        <h3>🕊️ Holy Spirit</h3>
+                        <p>The Holy Spirit is God's presence with us, our Comforter, Guide, and Teacher. Jesus promised His disciples, "But the Helper, the Holy Spirit, whom the Father will send in My name, He will teach you all things, and bring to your remembrance all things that I said to you" (John 14:26).</p>
+                        <p>As you use ChristNote to journal your spiritual journey, pray that the Holy Spirit would guide your thoughts, illuminate Scripture, and help you remember God's faithfulness. The Spirit helps us in our weakness and intercedes for us according to God's will (Romans 8:26-27).</p>
+                    </div>
+                    
+                    <div class="spiritual-card">
+                        <h3>👑 God the Father</h3>
+                        <p>God the Father is our Creator, the Almighty, and the source of all love. He sent His only Son to save us, demonstrating the depth of His love for humanity. "For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life" (John 3:16).</p>
+                        <p>Through ChristNote, may you grow in understanding God's character, His promises, and His plan for your life. Use this tool to record answered prayers, document God's faithfulness, and reflect on His Word. Our Father desires a relationship with each of us, and journaling can be a beautiful way to draw closer to Him.</p>
+                    </div>
+                    
+                    <div class="spiritual-card highlight">
+                        <h3>💝 The Trinity</h3>
+                        <p>We believe in one God who exists eternally in three persons: God the Father, God the Son (Jesus Christ), and God the Holy Spirit. They are co-equal, co-eternal, and work together in perfect unity for our salvation and spiritual growth.</p>
+                        <p>As you use ChristNote, remember that you're not just taking notes—you're engaging with the living God who loves you, died for you, and wants to walk with you daily. May this app be a tool that helps you grow in your relationship with the Father, through the Son, by the power of the Holy Spirit.</p>
+                    </div>
+                </div>
+            </div>
+
                         <div class="section">
                 <h2>Frequently Asked Questions</h2>
+                <div class="search-container">
+                    <div class="search-icon">🔍</div>
+                    <input type="text" class="search-input" id="faqSearch" placeholder="Search questions and answers...">
+                    <div class="search-results-count" id="searchResultsCount"></div>
+                </div>
                 <div class="faq-section-wrapper collapsed">
                     <div class="faq-section-header">
                         <h3>Getting Started</h3>
@@ -1794,6 +2008,68 @@
                     wrapper.classList.toggle('collapsed');
                 });
             });
+            
+            // Search functionality
+            const searchInput = document.getElementById('faqSearch');
+            const searchResultsCount = document.getElementById('searchResultsCount');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const allFaqSections = document.querySelectorAll('.faq-section-wrapper');
+            
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase().trim();
+                    let visibleCount = 0;
+                    let visibleSections = new Set();
+                    
+                    if (searchTerm === '') {
+                        // Show all items and sections
+                        faqItems.forEach(item => {
+                            item.classList.remove('hidden');
+                            visibleCount++;
+                        });
+                        allFaqSections.forEach(section => {
+                            section.classList.remove('hidden');
+                        });
+                        searchResultsCount.textContent = '';
+                    } else {
+                        // Filter items
+                        faqItems.forEach(item => {
+                            const question = item.querySelector('.faq-question')?.textContent.toLowerCase() || '';
+                            const answer = item.querySelector('.faq-answer')?.textContent.toLowerCase() || '';
+                            const matches = question.includes(searchTerm) || answer.includes(searchTerm);
+                            
+                            if (matches) {
+                                item.classList.remove('hidden');
+                                visibleCount++;
+                                // Find parent section and mark it as visible
+                                const section = item.closest('.faq-section-wrapper');
+                                if (section) {
+                                    visibleSections.add(section);
+                                    section.classList.remove('collapsed');
+                                    section.classList.remove('hidden');
+                                }
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                        
+                        // Hide sections with no visible items
+                        allFaqSections.forEach(section => {
+                            const visibleItems = section.querySelectorAll('.faq-item:not(.hidden)');
+                            if (visibleItems.length === 0) {
+                                section.classList.add('hidden');
+                            }
+                        });
+                        
+                        // Update results count
+                        if (visibleCount === 0) {
+                            searchResultsCount.innerHTML = '<div class="no-results"><div class="no-results-icon">🔍</div><p>No questions found matching "' + e.target.value + '"</p></div>';
+                        } else {
+                            searchResultsCount.textContent = `Found ${visibleCount} question${visibleCount !== 1 ? 's' : ''} matching "${e.target.value}"`;
+                        }
+                    }
+                });
+            }
         });
     </script>
 </body>
