@@ -109,6 +109,36 @@
             margin: 0 auto;
         }
         
+        .badge-row {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        
+        .badge-new {
+            background: rgba(16, 185, 129, 0.18);
+            color: #ecfdf5;
+            border: 1px solid rgba(16, 185, 129, 0.5);
+        }
+        
+        .badge-outline {
+            background: rgba(15, 23, 42, 0.25);
+            color: #e5e7eb;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+        
         .content {
             padding: 50px 40px;
         }
@@ -816,6 +846,10 @@
                 </div>
                 <h1>ChristNote Support</h1>
                 <p>Your Bible study companion - We're here to help you grow in faith through better note-taking</p>
+                <div class="badge-row">
+                    <span class="badge badge-new">New in 2026</span>
+                    <span class="badge badge-outline">Gantt charts · Prophetic Calendar · Quick Audio</span>
+                </div>
                 <div class="app-store-link">
                     <a href="https://apps.apple.com/de/app/christnote/id6757015110?l=en-GB" target="_blank" rel="noopener noreferrer" class="app-store-badge">
                         Download on the App Store
@@ -875,13 +909,13 @@
                     </div>
                     
                     <div class="feature-card">
-                        <h3>📎 Attachments</h3>
-                        <p>Attach sermon PDFs, Bible study handouts, or images to your notes. Keep all your study materials organized in one place.</p>
+                        <h3>⚡ Quick Audio (Quick Record)</h3>
+                        <p>Start a new voice recording instantly from Siri, the Shortcuts app, or Control Center. Capture ideas in seconds without navigating the full app.</p>
                     </div>
                     
                     <div class="feature-card">
-                        <h3>🔒 Complete Privacy</h3>
-                        <p>All your Bible study notes, prayer journals, and spiritual reflections are stored locally on your device. No cloud sync means your faith journey stays completely private.</p>
+                        <h3>📎 Attachments</h3>
+                        <p>Attach sermon PDFs, Bible study handouts, or images to your notes. Keep all your study materials organized in one place.</p>
                     </div>
                     
                     <div class="feature-card">
@@ -895,8 +929,44 @@
                     </div>
                     
                     <div class="feature-card">
+                        <h3>📊 Gantt Charts & Project Timelines</h3>
+                        <p>Turn notes with tasks into beautiful Gantt charts and dashboards. Plan Bible study series, ministry projects, or writing timelines with start/end dates, milestones, and progress.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🌙 Prophetic Calendar</h3>
+                        <p>View prophetic notes (dreams, visions, inspirations) on a dedicated calendar. See how the Lord is speaking over time and quickly jump into each prophetic note.</p>
+                    </div>
+                    
+                    <div class="feature-card">
                         <h3>🤖 AI Assistance</h3>
                         <p>Optional AI help for summarizing sermon notes, improving your writing, or translating content. Your data never leaves your device.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🔒 Complete Privacy</h3>
+                        <p>All your Bible study notes, prayer journals, and spiritual reflections are stored locally on your device. No cloud sync means your faith journey stays completely private.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Planning, Prophetic & Audio Tools</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>📊 Gantt Project Planning</h3>
+                        <p>Use tasks inside a note to build a project timeline, then open the Gantt view or Gantt Dashboard to see everything on a visual timeline.</p>
+                        <p>You can export your Gantt chart to PDF for printing, CSV for spreadsheets, or JSON for advanced workflows and backups.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌙 Prophetic Calendar</h3>
+                        <p>Create prophetic notes using the dream template or by adding the prophetic tag. They automatically appear in the Prophetic Calendar, organized by date.</p>
+                        <p>This makes it easy to review what the Lord has been speaking over weeks and months, and to connect related prophetic notes together.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Quick Audio Capture</h3>
+                        <p>Quick Audio (Quick Record) lets you start recording immediately from Siri, Shortcuts, or Control Center without manually opening the app.</p>
+                        <p>Perfect for capturing prayers, sermon moments, or spontaneous ideas when you’re on the go—each recording is still stored locally with your notes.</p>
                     </div>
                 </div>
             </div>
@@ -1168,7 +1238,7 @@
                         <div class="faq-container">
                     <div class="faq-item">
                         <div class="faq-question">What are dashboards?</div>
-                        <div class="faq-answer">Dashboards are specialized views that organize and display specific types of content:<br>• Highlights Dashboard<br>• Audio Dashboard<br>• Attachments Dashboard<br>• Secrets Dashboard<br>• Todo Dashboard<br>• Connected Notes Dashboard<br>• AI Communications Dashboard<br>• AI Overview Dashboard<br>• Canvas Dashboard</div>
+                        <div class="faq-answer">Dashboards are specialized views that organize and display specific types of content:<br>• Highlights Dashboard<br>• Audio Dashboard<br>• Attachments Dashboard<br>• Secrets Dashboard<br>• Todo Dashboard<br>• Connected Notes Dashboard<br>• AI Communications Dashboard<br>• AI Overview Dashboard<br>• Canvas Dashboard<br>• Gantt Dashboard</div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">How do I enable/disable dashboards?</div>
@@ -1247,8 +1317,16 @@
                         <div class="faq-answer">The Canvas Dashboard shows all canvas boards - visual workspaces for organizing notes spatially.</div>
                     </div>
                     <div class="faq-item">
+                        <div class="faq-question">What is the Gantt Dashboard?</div>
+                        <div class="faq-answer">The Gantt Dashboard collects all notes that contain project tasks and shows them as Gantt charts, so you can see timelines, milestones, and progress across your projects.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I create a Gantt chart?</div>
+                        <div class="faq-answer">Create or open a note with tasks (for example using a Gantt or project template), then open the Gantt view from the Tasks &amp; Gantt area or via the Gantt Dashboard. You can export your chart as PDF, CSV, or JSON for sharing and backup.<br><br>---</div>
+                    </div>
+                    <div class="faq-item">
                         <div class="faq-question">How do I create a canvas?</div>
-                        <div class="faq-answer">Open the Canvas Dashboard and tap "New Canvas". You can add notes to canvases by dragging or using the menu.<br><br>---</div>
+                        <div class="faq-answer">Open the Canvas Dashboard and tap "New Canvas". You can add notes to canvases by dragging or using the menu.</div>
                     </div>
                         </div>
                     </div>
@@ -1426,7 +1504,15 @@
                     </div>
                     <div class="faq-item">
                         <div class="faq-question">Can I attach multiple voice recordings to one note?</div>
-                        <div class="faq-answer">Yes, you can record multiple voice notes in a single note.<br><br>---</div>
+                        <div class="faq-answer">Yes, you can record multiple voice notes in a single note.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is Quick Audio (Quick Record)?</div>
+                        <div class="faq-answer">Quick Audio is a fast way to start a new voice recording from Siri, the Shortcuts app, or Control Center. It opens a lightweight recording sheet in ChristNote so you can capture ideas without searching for the right note first.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I use Quick Audio?</div>
+                        <div class="faq-answer">Add the "Quick Record" shortcut from the Shortcuts app or ask Siri to "Quick record in ChristNote". The app opens directly to the quick audio recorder, and the recording is saved locally with your notes.<br><br>---</div>
                     </div>
                         </div>
                     </div>

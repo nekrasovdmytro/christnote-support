@@ -228,6 +228,7 @@ You can switch between them in Settings → Editor → Editor Engine.
 - AI Communications Dashboard
 - AI Overview Dashboard
 - Canvas Dashboard
+- Gantt Dashboard
 
 ### Q: How do I enable/disable dashboards?
 **A:** Go to Settings → Dashboards and toggle the dashboards you want to use.
@@ -288,6 +289,12 @@ You can switch between them in Settings → Editor → Editor Engine.
 
 ### Q: How do I create a canvas?
 **A:** Open the Canvas Dashboard and tap "New Canvas". You can add notes to canvases by dragging or using the menu.
+
+### Q: What is the Gantt Dashboard?
+**A:** The Gantt Dashboard collects all notes that contain project tasks and shows them as Gantt charts, so you can see timelines, milestones, and progress across your projects in one place.
+
+### Q: How do I create a Gantt chart?
+**A:** Create or open a note with tasks (for example using a Gantt or project template), then open the Gantt view from the Tasks & Gantt area or via the Gantt Dashboard. You can export your chart as PDF, CSV, or JSON for sharing, printing, and backup.
 
 ---
 
@@ -432,6 +439,12 @@ You can only use one provider at a time.
 
 ### Q: Can I attach multiple voice recordings to one note?
 **A:** Yes, you can record multiple voice notes in a single note.
+
+### Q: What is Quick Audio (Quick Record)?
+**A:** Quick Audio is a fast way to start a new voice recording from Siri, the Shortcuts app, or Control Center. It opens a lightweight recording sheet in ChristNote so you can capture ideas without navigating the full app.
+
+### Q: How do I use Quick Audio?
+**A:** Add the "Open Quick Record" shortcut from the Shortcuts app or ask Siri to "Quick record in ChristNote". The app opens directly to the quick audio recorder and saves the recording locally with your notes.
 
 ---
 
